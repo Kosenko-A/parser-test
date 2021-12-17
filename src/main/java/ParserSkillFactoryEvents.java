@@ -14,7 +14,7 @@ public class ParserSkillFactoryEvents extends Parser{
     private static final String nameBlockLink = "a[class = t774__btn-text t-btntext t-btntext_sm]";
     private static final String nameBlockTitle = "div[class=t774__title t-name t-name_xs]";
 
-    public static List<JSONObject> getJsonSkillFactoryEvents() throws IOException, JSONException {
+    public List<JSONObject> parse() throws IOException, JSONException {
         JSONObject jsonObject = new JSONObject();
         List<JSONObject> jsonObjectList = new ArrayList<>();
         Elements eventsTitle = getBlockElements(url,nameBlockGeneral, nameBlockTitle);

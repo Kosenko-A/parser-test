@@ -14,7 +14,7 @@ public class ParserGbPosts extends Parser{
     private static final String nameBlockGeneral = "div[class=post-items-wrapper]";
     private static final String nameBlockLink = "a[class=post-item__title h3 search_text]";
 
-    public static List<JSONObject> getJsonGbPosts() throws IOException, JSONException {
+    public List<JSONObject> parse() throws IOException, JSONException {
         JSONObject jsonObject = new JSONObject();
         List<JSONObject> jsonObjectList = new ArrayList<>();
         Elements posts = getBlockElements(url,nameBlockGeneral, nameBlockLink);

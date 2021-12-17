@@ -14,7 +14,7 @@ public class ParserGbEvents extends Parser {
     private static final String nameBlock = "h3[class=gb-event-info__item gb-event-info__title]";
     private static final String nameBlockLink = "a";
 
-    public static List<JSONObject> getJsonGbEvents() throws IOException, JSONException {
+    public List<JSONObject> parse() throws IOException, JSONException {
         JSONObject jsonObject = new JSONObject();
         List<JSONObject> jsonObjectList = new ArrayList<>();
         Elements events = getBlockElements(url,nameBlockGeneral, nameBlock, nameBlockLink);

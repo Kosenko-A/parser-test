@@ -15,7 +15,7 @@ public class ParserSkillboxEvents extends Parser{
     private static final String nameBlockLink = "a[class=webinar-card button-play webinar-card--default]";
     private static final String nameBlockTitle = "h3[class=webinar-card__title]";
 
-    public static List<JSONObject> getJsonSkillboxEvents() throws IOException, JSONException {
+    public List<JSONObject> parse() throws IOException, JSONException {
 
         JSONObject jsonObject = new JSONObject();
         List<JSONObject> jsonObjectList = new ArrayList<>();

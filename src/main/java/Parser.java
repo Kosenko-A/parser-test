@@ -10,7 +10,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Parser {
+public abstract class Parser {
 
     protected static Document getPageByLink(String url) throws IOException {
         return Jsoup.parse(new URL(url), 8000);
@@ -37,5 +37,7 @@ public class Parser {
         jsonObject.put("link", url);
         return jsonObject;
     }
+
+    protected abstract List<JSONObject> parse() throws IOException, JSONException;
 
 }
