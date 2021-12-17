@@ -7,11 +7,13 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Parser {
 
     protected static Document getPageByLink(String url) throws IOException {
-        return Jsoup.parse(new URL(url), 5000);
+        return Jsoup.parse(new URL(url), 8000);
     }
 
     protected static Elements getBlockElements (String url, String cssQueryBlock, String addBlock, String cssQueryElements) throws IOException {
@@ -35,4 +37,5 @@ public class Parser {
         jsonObject.put("link", url);
         return jsonObject;
     }
+
 }

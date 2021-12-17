@@ -10,6 +10,12 @@ public class Main {
         System.out.println(parserGbEvents.getJsonGbEvents());
 
         ParserGbPosts parserGbPosts = new ParserGbPosts();
-        System.out.println(parserGbPosts.getJsonGbEvents());
+        System.out.println(parserGbPosts.getJsonGbPosts());
+
+        ParserSkillboxEvents parserSkillboxEvents = new ParserSkillboxEvents();
+        System.out.println(parserSkillboxEvents.getJsonSkillboxEvents());
+
+        ParserSkillFactoryEvents parserSkillFactoryEvents = new ParserSkillFactoryEvents();
+        System.out.println(parserSkillFactoryEvents.getJsonSkillFactoryEvents());
     }
 }

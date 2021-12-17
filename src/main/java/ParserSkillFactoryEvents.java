@@ -7,16 +7,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParserSkillboxEvents extends Parser{
+public class ParserSkillFactoryEvents extends Parser{
 
-    private static final String url = "https://live.skillbox.ru/";
-    private static final String urlPage = "https://live.skillbox.ru/";
-    private static final String nameBlockGeneral = "section[class=webinars-section]";
-    private static final String nameBlockLink = "a[class=webinar-card button-play webinar-card--default]";
-    private static final String nameBlockTitle = "h3[class=webinar-card__title]";
+    private static final String url = "https://skillfactory.ru/events";
+    private static final String nameBlockGeneral = "div[class=t774__container t774__container_mobile-grid]";
+    private static final String nameBlockLink = "a[class = t774__btn-text t-btntext t-btntext_sm]";
+    private static final String nameBlockTitle = "div[class=t774__title t-name t-name_xs]";
 
-    public static List<JSONObject> getJsonSkillboxEvents() throws IOException, JSONException {
-
+    public static List<JSONObject> getJsonSkillFactoryEvents() throws IOException, JSONException {
         JSONObject jsonObject = new JSONObject();
         List<JSONObject> jsonObjectList = new ArrayList<>();
         Elements eventsTitle = getBlockElements(url,nameBlockGeneral, nameBlockTitle);
@@ -28,9 +26,9 @@ public class ParserSkillboxEvents extends Parser{
         Elements eventsUrl = getBlockElements(url,nameBlockGeneral, nameBlockLink);
         int i = 0;
         for (Element eventUrl: eventsUrl) {
-            String url = urlPage + eventUrl.attr("href");
+            String url = eventUrl.attr("href");
             String text = titles.get(i);
-            jsonObject = getJson(url,text);
+            jsonObject = getJson(url, text);
             jsonObjectList.add(jsonObject);
             i++;
         }
